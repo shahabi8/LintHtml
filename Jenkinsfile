@@ -8,7 +8,7 @@ pipeline {
 	  }
       stage('Upload to AWS') {
         steps {
-          withAWS(region:'us-east-1',credentials:'blueocean') {
+          withAWS(region:'us-east-1',credentials:'udacity1') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'Index.html', bucket:'jenkins-upload-aws')
           }
         }
